@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo" />
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#qualification">Qualification</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-text">
+            <h3>Web Developer</h3>
+            <h1>Hello, I'm <span>Sahil</span></h1>
+            <h2>From India</h2>
+            <div class="intro-button-wrapper">
+                <button class="intro-btn"
+                    onclick="document.getElementById('video-section').scrollIntoView({ behavior: 'smooth' })">
+                    Introduction
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="main.png" alt="Your photo" />
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <!-- Video Section -->
+    <section id="video-section" class="video-section">
+        <div class="video-intro-text">
+            <h2>Introduction</h2>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HcOc7P5BMi4?si=QvsGpjF054cWJc7L"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h1>About Me</h1>
+            <div class="about-photo">
+                <img src="main.png" alt="About photo" />
+            </div>
+            <div class="about-text">
+
+                <p>Hi! I'm Sahil, a passionate Web Developer from India. I specialize in creating modern and responsive
+                    websites using HTML, CSS, JavaScript, and frameworks like React.
+
+                    I enjoy turning ideas into reality through clean, efficient code and smooth user experiences. I’m
+                    always eager to learn new technologies and improve my craft.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="skills-container">
+            <div class="skills-image">
+                <img src="skills.jpeg" alt="Skills illustration" />
+            </div>
+            <div class="skills">
+                <h1>My Skills</h1>
+                <ul>
+                    <li>HTML/CSS</li>
+                    <li>C/C++</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualification Section -->
+    <section id="qualification" class="qualification-section">
+        <div class="qualification-container">
+            <h1>Qualification</h1>
+            <ul class="qualification-list">
+                <li>
+                    <h3>Secondary School Certificate (SSC)</h3>
+                    <p>L.J.N.V.Agarwadi, 2017</p>
+                    <p>Completed with distinction in Science stream.</p>
+                </li>
+                <li>
+                    <h3>Diploma in Computer Engineering</h3>
+                    <p>St.John College of engineering and Mangenment, 2024</p>
+                    <p>Focused on programming, networking, and database systems.</p>
+                </li>
+                <li>
+                    <h3>Bachelor of Computer Science (Currently Pursuing)</h3>
+                    <p>St.John College of engineering and Mangenment, Pursuing</p>
+                    <p>Specializing in Software Development and Web Technologies.</p>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h1>Contact Me</h1>
+            <p>Feel free to reach out for collaborations or just a friendly hello.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <p>Email: sahil1613gawad@gmail.com</p>
+                <p>Phone: 7276728576</p>
+                <p>Location: Palghar, India</p>
+            </div>
+            <div class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30049.425207312353!2d72.7843242!3d19.705038059122877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71c92fbd91e67%3A0x2a3ce68676417a45!2sSt.%20John%20College%20of%20Engineering%20and%20Management!5e0!3m2!1sen!2sin!4v1747810094294!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Sahil. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger toggle for mobile nav
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
