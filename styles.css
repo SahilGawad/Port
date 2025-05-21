@@ -213,7 +213,15 @@ a {
   background-color: #373434;
   padding: 100px 40px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;  /* stack title and container vertically */
+  align-items: center;     /* center children horizontally */
+}
+
+.skills-title {
+  text-align: center;      /* center the heading text */
+  margin-bottom: 40px;     /* space below title */
+  width: 100%;             /* span full width to center properly */
+  max-width: 1200px;       /* max width same as container */
 }
 
 .skills-container {
@@ -222,7 +230,10 @@ a {
   max-width: 1200px;
   gap: 60px;
   flex-wrap: wrap;
+  justify-content: center;  /* <-- change from flex-start to center */
+  width: 100%;
 }
+
 
 .skills-image img {
   width: 350px;
@@ -236,9 +247,18 @@ a {
   max-width: 500px;
 }
 
+.skills-title h1 {
+  font-size: 40px;       /* same as qualification's h1 */
+  color: #ff004f;        /* same pinkish color as qualification */
+  margin-bottom: 20px;   /* keep spacing below */
+  text-align: center;    /* ensure centered */
+  font-weight: bold;     /* optional, to keep it bold */
+}
+
+
 .skills h1 {
-  font-size: 48px;
-  margin-bottom: 30px;
+  font-size: 40px;
+  margin-bottom: 40px;
 }
 
 .skills ul {
@@ -419,7 +439,7 @@ a {
 
 /* Video Section */
 .video-section {
-  padding: 80px 20px; /* reduce top padding to balance space */
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -427,14 +447,13 @@ a {
 }
 
 .video-section iframe {
-  width: 900px;      /* wider width for laptop */
-  max-width: 90vw;   /* responsive on smaller screens */
-  height: 506px;     /* 16:9 aspect ratio for 900px width */
+  width: 900px;
+  max-width: 90vw;
+  height: 506px;
   border-radius: 10px;
   box-shadow: 0 0 25px rgba(255, 0, 79, 0.5);
 }
 
-/* Keep intro text styles as before */
 .video-intro-text {
   text-align: center;
   max-width: 900px;
@@ -457,7 +476,7 @@ a {
 @media (max-width: 1024px) {
   .video-section iframe {
     width: 100%;
-    height: auto;  /* auto height to maintain aspect ratio */
+    height: auto;
     max-width: 800px;
   }
 
@@ -483,68 +502,4 @@ a {
     width: 100%;
     background-color: #000;
     position: absolute;
-    top: 80px;
-    left: 0;
-    padding: 20px 0;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    padding: 15px 40px;
-    width: 100%;
-  }
-
-  .nav-links li a {
-    font-size: 18px;
-  }
-
-  .hero-text h1,
-  .hero-text h2,
-  .hero-text h3 {
-    margin-left: 0;
-  }
-
-  .hero {
-    padding: 40px 20px;
-  }
-
-  .hero-image {
-    margin-right: 0;
-    margin-top: 30px;
-  }
-
-  .intro-button-wrapper {
-    justify-content: center;
-  }
-
-  .skills-container {
-    flex-direction: column;
-  }
-
-  .skills-image img {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .about-container {
-    flex-direction: column;
-  }
-
-  .about-text {
-    text-align: center;
-  }
-
-  .qualification-container,
-  .qualification-list li {
-    max-width: 100%;
-  }
-
-  .qualification-list li {
-    padding: 15px 20px;
-  }
-}
+    top: 

@@ -81,23 +81,26 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="skills-section">
-        <div class="skills-container">
-            <div class="skills-image">
-                <img src="skills.jpeg" alt="Skills illustration" />
-            </div>
-            <div class="skills">
-                <h1>My Skills</h1>
-                <ul>
-                    <li>HTML/CSS</li>
-                    <li>C/C++</li>
-                    <li>Java</li>
-                    <li>Python</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+  <div class="skills-title">
+    <h1>My Skills</h1>
+  </div>
+
+  <div class="skills-container">
+    <div class="skills-image">
+      <img src="skills.jpeg" alt="Skills illustration" />
+    </div>
+    <div class="skills">
+      <ul>
+        <li>HTML/CSS</li>
+        <li>C/C++</li>
+        <li>Java</li>
+        <li>Python</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
     <!-- Qualification Section -->
     <section id="qualification" class="qualification-section">
@@ -115,7 +118,7 @@
                     <p>Focused on programming, networking, and database systems.</p>
                 </li>
                 <li>
-                    <h3>Bachelor of Computer Science (Currently Pursuing)</h3>
+                    <h3>B-Tech In Computer Engineering (Currently Pursuing)</h3>
                     <p>St.John College of engineering and Mangenment, Pursuing</p>
                     <p>Specializing in Software Development and Web Technologies.</p>
                 </li>
@@ -154,16 +157,29 @@
         <p>© 2025 Sahil. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Hamburger toggle for mobile nav
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.querySelector('.nav-links');
+   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-    </script>
+    if (hamburger && navLinks) {
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+
+      // Optional: Close nav when a link is clicked (mobile usability)
+      const navItems = navLinks.querySelectorAll("a");
+      navItems.forEach(link =>
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        })
+      );
+    }
+  });
+</script>
+
 </body>
 
 </html>
