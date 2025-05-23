@@ -88,7 +88,7 @@ a {
   max-width: 600px;
 }
 
-.role {
+.hero-text h3 {
   font-size: 18px;
   color: #ccc;
   margin-bottom: 10px;
@@ -110,20 +110,6 @@ a {
   margin-top: 10px;
 }
 
-.hero-text h3 {
-  font-size: 30px;
-  margin-left: 80px;
-  margin-top: 1px;
-}
-
-.hero-image {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 100px;
-}
-
-/* Intro button below hero image */
 .intro-button-wrapper {
   margin-top: 20px;
   display: flex;
@@ -146,6 +132,13 @@ a {
 
 .intro-btn:hover {
   background-color: #e60045;
+}
+
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 100px;
 }
 
 .hero-image img {
@@ -213,15 +206,15 @@ a {
   background-color: #373434;
   padding: 100px 40px;
   display: flex;
-  flex-direction: column;  /* stack title and container vertically */
-  align-items: center;     /* center children horizontally */
+  flex-direction: column;
+  align-items: center;
 }
 
 .skills-title {
-  text-align: center;      /* center the heading text */
-  margin-bottom: 40px;     /* space below title */
-  width: 100%;             /* span full width to center properly */
-  max-width: 1200px;       /* max width same as container */
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .skills-container {
@@ -230,10 +223,9 @@ a {
   max-width: 1200px;
   gap: 60px;
   flex-wrap: wrap;
-  justify-content: center;  /* <-- change from flex-start to center */
+  justify-content: center;
   width: 100%;
 }
-
 
 .skills-image img {
   width: 350px;
@@ -245,20 +237,6 @@ a {
 
 .skills {
   max-width: 500px;
-}
-
-.skills-title h1 {
-  font-size: 40px;       /* same as qualification's h1 */
-  color: #ff004f;        /* same pinkish color as qualification */
-  margin-bottom: 20px;   /* keep spacing below */
-  text-align: center;    /* ensure centered */
-  font-weight: bold;     /* optional, to keep it bold */
-}
-
-
-.skills h1 {
-  font-size: 40px;
-  margin-bottom: 40px;
 }
 
 .skills ul {
@@ -368,7 +346,7 @@ a {
   font-size: 16px;
   resize: vertical;
   background-color: #fdfcfc;
-  color: white;
+  color: #000;
   border: 1px solid #ff004f;
   transition: border-color 0.3s ease;
 }
@@ -450,43 +428,42 @@ a {
   width: 900px;
   max-width: 90vw;
   height: 506px;
-  border-radius: 10px;
-  box-shadow: 0 0 25px rgba(255, 0, 79, 0.5);
-}
-
-.video-intro-text {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 30px auto;
-  color: #ff004f;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 0, 79, 0.4);
+  margin-top: 30px;
 }
 
 .video-intro-text h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 36px;
+  color: #ff004f;
+  text-align: center;
 }
 
-.video-intro-text p {
-  font-size: 18px;
-  color: #ccc;
-  margin: 0;
+/* Hamburger Animation when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
-/* Responsive adjustments */
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive Styles */
 @media (max-width: 1024px) {
-  .video-section iframe {
-    width: 100%;
-    height: auto;
-    max-width: 800px;
+  .hero-text h1,
+  .hero-text h2 {
+    margin-left: 0;
   }
 
-  .video-intro-text {
-    max-width: 100%;
-    padding: 0 15px;
+  .hero {
+    padding: 60px 20px;
   }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
@@ -499,7 +476,112 @@ a {
   .nav-links {
     display: none;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     background-color: #000;
     position: absolute;
-    top: 
+    top: 80px;
+    left: 0;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+  }
+
+  .hero-text h1,
+  .hero-text h2,
+  .hero-text h3 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .hero-image {
+    margin-right: 0;
+    margin-top: 40px;
+  }
+
+  .skills-container {
+    flex-direction: column;
+  }
+
+  .skills-image img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .contact-map iframe {
+    height: 250px;
+  }
+
+  .video-section iframe {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text h2 {
+    font-size: 20px;
+  }
+
+  .hero-text h3 {
+    font-size: 14px;
+  }
+
+  .hero-image img {
+    width: 90%;
+    max-width: 250px;
+  }
+
+  .intro-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .skills ul li,
+  .qualification-list li {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .contact-info,
+  .about-text,
+  .skills,
+  .qualification-list li {
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .contact-map iframe,
+  .video-section iframe {
+    width: 100%;
+    height: 200px;
+  }
+}
